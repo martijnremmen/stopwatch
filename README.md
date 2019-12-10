@@ -1,2 +1,5 @@
 # stopwatch
-A simple stopwatch for the browser written in TypeScript
+
+A simple web stopwatch written in TypeScript
+
+![Screenshot] (screenshot.png)

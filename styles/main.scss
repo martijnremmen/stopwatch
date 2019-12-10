@@ -1,0 +1,85 @@
+$dark-bg: #3b3561;
+$light-fg: #51a3a3;
+$active: #dd7373;
+$text: #fbfbfb;
+$hl: #ead94c;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
+body {
+    background-color: $dark-bg;
+    margin: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1, h2, h3, p, button {
+    color: $text;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timer {
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    font-family: 'Space Mono', monospace;
+    .sc {
+        opacity: 0.8;
+    }
+}
+
+.buttons {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    button {
+        background-color: $light-fg;
+        border: none;
+        padding: 0.75em 2em;
+        margin: 1em;
+        font-size: 1.5em;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.5s
+    }
+
+    @media only screen and (max-width: 768px) {
+        button {
+            width: 100%
+        }
+    }
+
+    button:hover {
+        background-color: $hl;
+        color: $dark-bg;
+    }
+
+    button:active{
+        background-color: $dark-bg;
+        outline: $light-fg 1px solid;
+        color: $text;
+        transition: 0.01s;
+    }
+}
+
+.blink {
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.active {
+    background-color: $active !important;
+}
+
+@keyframes blink {
+    from {opacity: initial;}
+    to {opacity: 0.6;}
+}
