@@ -10,11 +10,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2-beta
     - uses: actions/setup-node@master
-    - name: Install Typescript and Sass
-      run: npm install -g typescript sass
-    - name: Compile Sass file
-      run: sass styles/main.scss 
+
+    - name: npm install
+      run: npm install
       working-directory: /home/runner/work/stopwatch/stopwatch
-    - name: Compile TypeScript file
-      run: tsc --outFile js/main.js js/main.ts
+
+    - name: Compile TypeScript
+      run: npm run ts:build
+      working-directory: /home/runner/work/stopwatch/stopwatch.
+
+    - name: Compile Sass
+      run: npm run css:build
       working-directory: /home/runner/work/stopwatch/stopwatch
