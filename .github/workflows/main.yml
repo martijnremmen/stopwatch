@@ -26,7 +26,7 @@ jobs:
     - name: Build Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: Accendit/stopwatch/stopwatch
+        name: accendit/stopwatch/stopwatch
         registry: docker.pkg.github.com
         username: Accendit
         password: ${{ secrets.GITHUB_TOKEN }}
