@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/npm
+    - name: Install Typescript and Sass
+      run: npm install -g typescript
+    - name: Compile Sass file
+      run: sass styles/main.scss 
+    - name: Compile TypeScript file
+      run: tsc --outFile js/main.js js/main.ts
