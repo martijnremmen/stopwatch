@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/npm
+    - uses: actions/setup-node
     - name: Install Typescript and Sass
       run: npm install -g typescript
     - name: Compile Sass file
