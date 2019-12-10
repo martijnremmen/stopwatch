@@ -12,7 +12,7 @@ var secondsdisplay: HTMLElement
 var counting: boolean = false
 var time: number = 0
 
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function() {
     startstopbtn = document.getElementById("startstopbtn")
     resetbtn = document.getElementById("resetbtn")
     startstopbtn.addEventListener("click", toggleTimer)
