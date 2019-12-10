@@ -13,5 +13,7 @@ jobs:
       run: npm install -g typescript sass
     - name: Compile Sass file
       run: sass styles/main.scss 
+      working-directory: ./temp
     - name: Compile TypeScript file
       run: tsc --outFile js/main.js js/main.ts
+      working-directory: ./temp
