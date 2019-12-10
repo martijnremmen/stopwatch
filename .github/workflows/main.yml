@@ -24,8 +24,7 @@ jobs:
       working-directory: /home/runner/work/stopwatch/stopwatch
     
     - name: Build Docker image
-      run: docker build ./
-      working-directory: /home/runner/work/stopwatch/stopwatch
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: Accendit/stopwatch/stopwatch
         registry: docker.pkg.github.com
