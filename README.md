@@ -2,4 +2,4 @@
 
 A simple web stopwatch written in TypeScript
 
-![Screenshot] (screenshot.png)
+![Screenshot] (https://github.com/Accendit/stopwatch/raw/master/screenshot.png)
