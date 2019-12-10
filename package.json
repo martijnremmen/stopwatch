@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "scripts": {
+        "watch": "npm run css:watch & npm run ts:watch",
+        "build": "npm run ts:build && npm run css:build",
+        "css:build": "sass styles:css --no-source-map",
+        "css:watch": "sass styles:css --no-source-map --watch",
+        "ts:build": "tsc --outFile js/app.js scripts/app.ts",
+        "ts:watch": "tsc --outFile js/app.js scripts/app.ts --watch",
+        "clean": "rm -rf scripts/ && rm -rf styles/"
+    },
+    "dependencies": {
+        "sass": "^1.23.7",
+        "typescript": "^3.7.3"
+    }
+}
