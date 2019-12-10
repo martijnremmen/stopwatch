@@ -5,3 +5,4 @@
 *.scss.map
 *.js
 *.css
+node_modules/
