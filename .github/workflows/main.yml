@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/setup-node@master
     - name: Install Typescript and Sass
-      run: npm install -g typescript
+      run: npm install -g typescript sass
     - name: Compile Sass file
       run: sass styles/main.scss 
     - name: Compile TypeScript file
