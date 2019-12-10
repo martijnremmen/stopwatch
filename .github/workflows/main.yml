@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2-beta
     - uses: actions/setup-node@master
     - name: Install Typescript and Sass
       run: npm install -g typescript sass
