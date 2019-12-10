@@ -17,7 +17,7 @@ jobs:
 
     - name: Compile TypeScript
       run: npm run ts:build
-      working-directory: /home/runner/work/stopwatch/stopwatch.
+      working-directory: /home/runner/work/stopwatch/stopwatch
 
     - name: Compile Sass
       run: npm run css:build
