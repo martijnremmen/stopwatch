@@ -3,6 +3,6 @@
 *.css.map
 *.sass.map
 *.scss.map
-*.js
-*.css
+js/
+css/
 node_modules/
