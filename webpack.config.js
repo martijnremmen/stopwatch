@@ -1,13 +1,19 @@
 'use strict';
 const path = require('path');
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 
-    entry: ['./src/scripts/app.ts', './src/styles/main.scss'],
+    entry: ['./src/scripts/app.ts', './src/styles/main.scss', './src/index.html'],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
+    },
+
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        hot: true
     },
 
     module: {
@@ -57,6 +63,10 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
             ignoreOrder: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
         })
     ]
 };
