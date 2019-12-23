@@ -14,7 +14,7 @@ var app = new Vue({
             <timerdisplay :counter=seconds :blinking=isPaused></timerdisplay>
             <div class='buttons'>
                 <button :class="{ active: counting }" @click=toggleTimer>{{ counting ? 'Stop' : 'Start' }}</button>
-                <button>Reset</button>
+                <button @click=resetTimer >Reset</button>
             </div>
         </div>
     `,
@@ -26,6 +26,11 @@ var app = new Vue({
     methods: {
         toggleTimer () {
             this.counting = !this.counting
+        },
+
+        resetTimer () {
+            this.counting = false
+            this.seconds = 0
         },
 
         pauseTimer () {
