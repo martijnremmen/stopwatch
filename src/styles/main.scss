@@ -7,6 +7,10 @@ $hl: #ead94c;
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
+:root {
+    font-size: 3vh;
+}
+
 body {
     background-color: $dark-bg;
     margin: 0;
@@ -24,8 +28,8 @@ h1, h2, h3, p, button {
 }
 
 .timer {
-    font-size: 3em;
-    letter-spacing: 0.1em;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
     font-family: 'Space Mono', monospace;
     text-align: center;
     .sc {
@@ -42,9 +46,9 @@ h1, h2, h3, p, button {
     button {
         background-color: $light-fg;
         border: none;
-        padding: 0.75em 2em;
-        margin: 1em;
-        font-size: 1.5em;
+        padding: 0.75rem 2rem;
+        margin: 1rem;
+        font-size: 1.5rem;
         cursor: pointer;
         font-weight: bold;
         transition: 0.5s
@@ -66,6 +70,7 @@ h1, h2, h3, p, button {
         outline: $light-fg 1px solid;
         color: $text;
         transition: 0.01s;
+        transition-timing-function: ease-in-out;
     }
 }
 
@@ -74,6 +79,7 @@ h1, h2, h3, p, button {
     animation-duration: 0.75s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .active {
