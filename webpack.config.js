@@ -69,7 +69,7 @@ module.exports = (env, argv) => {
         resolve: {
             extensions: [ '.ts', '.tsx', '.js' ],
             alias: {
-                vue: 'vue/dist/vue.js'
+                vue: isProduction ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
             }
         },
 
