@@ -1,21 +1,53 @@
 import Vue from 'vue'
-
-Vue.component('digit', {
-    props: ['number'],
-    template: "<span> {{ number }} </span>"
-})
-
-Vue.component('timer-display', {
-    props: ['counter'],
-    template: "<h1 class=\"timer\"><digit number=1></h1>",
-    methods: {}
-})
+import timerdisplay from './timerdisplay.vue'
 
 var app = new Vue({
     el: '#app',
+    
     data: {
         counting: false,
-        counter: 0,
+        seconds: 0,
     },
-    template: "<timer-display counter=4></timer-display>"
+
+    template: `
+        <div>
+            <timerdisplay :counter=seconds :blinking=isPaused></timerdisplay>
+            <div class='buttons'>
+                <button :class="{ active: counting }" @click=toggleTimer>{{ counting ? 'Stop' : 'Start' }}</button>
+                <button>Reset</button>
+            </div>
+        </div>
+    `,
+
+    components: {
+        timerdisplay,
+    },
+
+    methods: {
+        toggleTimer () {
+            this.counting = !this.counting
+        },
+
+        pauseTimer () {
+            this.counting = false
+        },
+
+        startTimer () {
+            this.counting = true
+        }
+    },
+
+    computed: {
+        isPaused () {
+            return this.seconds !== 0 && !this.counting
+        }
+    },
+
+    mounted: function () {
+        window.setInterval(() => {
+            if (this.counting) {
+                this.seconds++
+            }
+        },1000)
+    }
 })
