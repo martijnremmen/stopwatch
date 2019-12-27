@@ -10,7 +10,7 @@
         "clean": "rm -rf scripts/ && rm -rf styles/"
     },
     "dependencies": {
-        "sass": "^1.23.7",
+        "sass": "^1.24.0",
         "typescript": "^3.7.3"
     }
 }
