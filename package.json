@@ -1,16 +1,26 @@
 {
     "private": true,
     "scripts": {
-        "watch": "npm run css:watch & npm run ts:watch",
-        "build": "npm run ts:build && npm run css:build",
-        "css:build": "sass styles:css --no-source-map",
-        "css:watch": "sass styles:css --no-source-map --watch",
-        "ts:build": "tsc --outFile js/app.js scripts/app.ts",
-        "ts:watch": "tsc --outFile js/app.js scripts/app.ts --watch",
-        "clean": "rm -rf scripts/ && rm -rf styles/"
+        "dev": "webpack-dev-server --progress --inline",
+        "build:dev": "webpack -d --progress",
+        "build:prod": "webpack -p --progress",
+        "clean": "rm -rf dist/"
     },
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
+        "css-loader": "^3.4.0",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
+        "mini-css-extract-plugin": "^0.8.2",
         "sass": "^1.24.0",
-        "typescript": "^3.7.3"
+        "sass-loader": "^8.0.0",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.3",
+        "vue": "^2.6.11",
+        "vue-loader": "^15.8.3",
+        "vue-template-compiler": "^2.6.11",
+        "webpack": "^4.41.3",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.10.1"
     }
 }

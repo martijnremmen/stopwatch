@@ -15,12 +15,8 @@ jobs:
       run: npm install
       working-directory: /home/runner/work/stopwatch/stopwatch
 
-    - name: Compile TypeScript
-      run: npm run ts:build
-      working-directory: /home/runner/work/stopwatch/stopwatch
-
-    - name: Compile Sass
-      run: npm run css:build
+    - name: Compile
+      run: npm run build:prod
       working-directory: /home/runner/work/stopwatch/stopwatch
     
     - name: Build Docker image
